@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LKPD JavaScript - F1 Racing</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: white;
+        }
+
+        header {
+            background: linear-gradient(135deg, #050505, #e10600);
+            padding: 45px 20px;
+            text-align: center;
+            border-bottom: 5px solid white;
+        }
+
+        header h1 {
+            font-size: 45px;
+            margin: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        .flag {
+            font-size: 35px;
+        }
+
+        nav {
+            background: #151515;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 5px;
+            padding: 9px 12px;
+            background: #e10600;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: white;
+            color: #e10600;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: #181818;
+            margin: 25px 0;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 6px solid #e10600;
+            box-shadow: 0 5px 20px #000;
+        }
+
+        h2 {
+            color: #ff2b2b;
+        }
+
+        h3 {
+            color: #ffd700;
+        }
+
+        .code {
+            background: #050505;
+            color: #00ff88;
+            padding: 18px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th {
+            background: #e10600;
+        }
+
+        th, td {
+            border: 1px solid #555;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .answer {
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 7px 0 15px;
+            background: #252525;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 7px;
+        }
+
+        textarea {
+            min-height: 80px;
+        }
+
+        button {
+            background: #e10600;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: white;
+            color: #e10600;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background: #092b1c;
+            border-left: 5px solid #00ff88;
+            border-radius: 7px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #050505;
+            margin-top: 40px;
+        }
+
+        .f1-title {
+            font-size: 60px;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        @media(max-width:600px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            .f1-title {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="flag">🏁 🏎️ 🏁</div>
+
+    <div class="f1-title">
+        F1 RACING
+    </div>
+
+    <h1>LKPD JavaScript</h1>
+
+    <p>
+        INPUT • OUTPUT • OPERATOR ARITMATIKA
+    </p>
+
+    <p>
+        🏎️ Dasar-Dasar PPLG
+    </p>
+</header>
+
+
+<nav>
+    <a href="#identitas">Identitas</a>
+    <a href="#aktivitas1">Aktivitas 1-4</a>
+    <a href="#aktivitas5">Aktivitas 5-9</a>
+    <a href="#asesmen">Asesmen</a>
+    <a href="#refleksi">Refleksi</a>
+</nav>
+
+
+<main>
+
+<!-- IDENTITAS -->
+
+<section class="card" id="identitas">
+
+    <h2>🏁 Identitas Pembalap</h2>
+
+    <label>Nama:</label>
+    <input type="text" placeholder="Masukkan nama">
+
+    <label>Kelas:</label>
+    <input type="text" placeholder="Masukkan kelas">
+
+    <label>Tanggal:</label>
+    <input type="date">
+
+</section>
+
+
+<!-- AKTIVITAS 1 -->
+
+<section class="card" id="aktivitas1">
+
+    <h2>🏎️ Aktivitas 1 — Prediksi</h2>
+
+    <div class="code">
+let a = 10;
+let b = 5;
+
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);
+    </div>
+
+    <table>
+
+        <tr>
+            <th>Operasi</th>
+            <th>Prediksi</th>
+            <th>Hasil Sebenarnya</th>
+        </tr>
+
+        <tr>
+            <td>a + b</td>
+            <td>15</td>
+            <td>15</td>
+        </tr>
+
+        <tr>
+            <td>a - b</td>
+            <td>5</td>
+            <td>5</td>
+        </tr>
+
+        <tr>
+            <td>a * b</td>
+            <td>50</td>
+            <td>50</td>
+        </tr>
+
+        <tr>
+            <td>a / b</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+
+    </table>
+
+    <p>
+        <b>Apakah prediksi kamu benar?</b>
+        <span class="answer">Ya.</span>
+    </p>
+
+    <p>
+        <b>Mengapa?</b>
+        <span class="answer">
+            Karena hasil operasi dapat dihitung menggunakan operator
+            aritmatika yang sesuai.
+        </span>
+    </p>
+
+</section>
+
+
+<!-- AKTIVITAS 2 -->
+
+<section class="card">
+
+    <h2>🔧 Aktivitas 2 — Eksperimen</h2>
+
+    <div class="code">
+let a = 20;
+let b = 4;
+
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);
+console.log(a % b);
+    </div>
+
+    <p>
+        <b>Prediksi:</b>
+    </p>
+
+    <p class="answer">
+        a + b = 24
+        <br>
+        a - b = 16
+        <br>
+        a * b = 80
+        <br>
+        a / b = 5
+        <br>
+        a % b = 0
+    </p>
+
+    <p>
+        <b>Apa yang kamu temukan?</b>
+    </p>
+
+    <p class="answer">
+        Operator % digunakan untuk mencari sisa pembagian.
+        Karena 20 dapat dibagi 4 tanpa sisa, hasilnya adalah 0.
+    </p>
+
+</section>
+
+
+<!-- AKTIVITAS 3 -->
+
+<section class="card">
+
+    <h2>📡 Aktivitas 3 — Input dengan prompt()</h2>
+
+    <div class="code">
+let nama = prompt("Masukkan nama:");
+
+console.log(nama);
+
+let umur = prompt("Masukkan umur:");
+
+console.log(umur);
+    </div>
+
+    <p>
+        <b>Apa fungsi prompt()?</b>
+    </p>
+
+    <p class="answer">
+        prompt() berfungsi untuk meminta atau menerima input
+        dari pengguna.
+    </p>
+
+</section>
+
+
+<!-- AKTIVITAS 4 -->
+
+<section class="card">
+
+    <h2>⏱️ Aktivitas 4 — Menghitung Umur</h2>
+
+    <div class="code">
+let tahunLahir = prompt("Masukkan tahun lahir:");
+
+let tahunSekarang = 2026;
+
+let umur = tahunSekarang - tahunLahir;
+
+console.log(umur);
+    </div>
+
+    <label>Tahun lahir kamu:</label>
+
+    <input
+        type="number"
+        id="tahunLahir"
+        placeholder="Contoh: 2010"
+    >
+
+    <button onclick="hitungUmur()">
+        HITUNG UMUR
+    </button>
+
+    <div id="hasilUmur" class="result"></div>
+
+</section>
+
+
+<!-- AKTIVITAS 5 -->
+
+<section class="card" id="aktivitas5">
+
+    <h2>💰 Aktivitas 5 — Mesin Kasir Mini</h2>
+
+    <div class="code">
+let harga = prompt("Masukkan harga:");
+
+let jumlah = prompt("Masukkan jumlah:");
+
+let total = harga * jumlah;
+
+console.log(total);
+    </div>
+
+    <p>
+        Uji:
+    </p>
+
+    <p>
+        Harga = Rp5.000
+        <br>
+        Jumlah = 4
+    </p>
+
+    <p class="answer">
+        Total = Rp20.000
+    </p>
+
+</section>
+
+
+<!-- AKTIVITAS 6 -->
+
+<section class="card">
+
+    <h2>🤝 Aktivitas 6 — Think Pair Share</h2>
+
+    <h3>THINK</h3>
+
+    <p>
+        Mengapa membutuhkan variable total?
+    </p>
+
+    <p class="answer">
+        Variable total digunakan untuk menyimpan hasil
+        perhitungan harga dikali jumlah.
+    </p>
+
+    <h3>PAIR</h3>
+
+    <p>
+        Jawaban sama?
+        <span class="answer">Ya.</span>
+    </p>
+
+    <p>
+        Jika berbeda:
+        <span class="answer">
+            Tidak ada karena jawaban kami sama.
+        </span>
+    </p>
+
+    <h3>SHARE</h3>
+
+    <p class="answer">
+        Variable total membuat hasil perhitungan lebih mudah
+        disimpan, digunakan, dan ditampilkan.
+    </p>
+
+</section>
+
+
+<!-- AKTIVITAS 7 -->
+
+<section class="card">
+
+    <h2>🍔 Aktivitas 7 — Challenge: Warung Digital</h2>
+
+    <div class="code">
+let makanan = prompt("Nama makanan:");
+
+let harga = prompt("Harga:");
+
+let jumlah = prompt("Jumlah:");
+
+let total = harga * jumlah;
+
+let diskon = total * 10 / 100;
+
+let bayar = total - diskon;
+    </div>
+
+    <label>Nama makanan:</label>
+    <input type="text" id="makanan" placeholder="Contoh: Burger">
+
+    <label>Harga:</label>
+    <input type="number" id="harga" placeholder="15000">
+
+    <label>Jumlah:</label>
+    <input type="number" id="jumlah" placeholder="2">
+
+    <button onclick="hitungKasir()">
+        HITUNG KASIR
+    </button>
+
+    <div id="hasilKasir" class="result"></div>
+
+    <p class="answer">
+        Program menampilkan Total, Diskon 10%, dan Total Bayar.
+    </p>
+
+</section>
+
+
+<!-- AKTIVITAS 8 -->
+
+<section class="card">
+
+    <h2>🐞 Aktivitas 8 — Debugging</h2>
+
+    <div class="code">
+let harga = 5000;
+
+let jumlah = 3;
+
+let total harga = harga * jumlah;
+
+console.log(total harga);
+    </div>
+
+    <p>
+        <b>Kesalahan:</b>
+    </p>
+
+    <p class="answer">
+        Nama variable tidak boleh menggunakan spasi.
+        "total harga" menyebabkan syntax error.
+    </p>
+
+    <p>
+        <b>Perbaikan kode:</b>
+    </p>
+
+    <div class="code">
+let harga = 5000;
+
+let jumlah = 3;
+
+let totalHarga = harga * jumlah;
+
+console.log(totalHarga);
+    </div>
+
+</section>
+
+
+<!-- AKTIVITAS 9 -->
+
+<section class="card">
+
+    <h2>💵 Aktivitas 9 — Kalkulator Tabungan</h2>
+
+    <label>Uang awal:</label>
+    <input type="number" id="uangAwal">
+
+    <label>Tabungan hari pertama:</label>
+    <input type="number" id="hari1">
+
+    <label>Tabungan hari kedua:</label>
+    <input type="number" id="hari2">
+
+    <label>Tabungan hari ketiga:</label>
+    <input type="number" id="hari3">
+
+    <button onclick="hitungTabungan()">
+        HITUNG TABUNGAN
+    </button>
+
+    <div id="hasilTabungan" class="result"></div>
+
+</section>
+
+
+<!-- ASESMEN -->
+
+<section class="card" id="asesmen">
+
+    <h2>🏆 D. Asesmen Formatif</h2>
+
+    <ol>
+
+        <li>
+            Apa output dari:
+            <div class="code">
+let a = 8;
+let b = 2;
+
+console.log(a + b);
+            </div>
+
+            <p class="answer">
+                Jawaban: 10
+            </p>
+        </li>
+
+
+        <li>
+
+            Apa output dari:
+
+            <div class="code">
+let a = 10;
+let b = 3;
+
+console.log(a % b);
+            </div>
+
+            <p class="answer">
+                Jawaban: 1
+            </p>
+
+        </li>
+
+
+        <li>
+
+            Apa fungsi prompt()?
+
+            <p class="answer">
+                Jawaban: Untuk menerima input dari pengguna.
+            </p>
+
+        </li>
+
+
+        <li>
+
+            Program menghitung luas persegi panjang:
+
+            <div class="code">
+let panjang = 10;
+
+let lebar = 5;
+
+let luas = panjang * lebar;
+
+console.log(luas);
+            </div>
+
+            <p class="answer">
+                Output: 50
+            </p>
+
+        </li>
+
+    </ol>
+
+</section>
+
+
+<!-- REFLEKSI -->
+
+<section class="card" id="refleksi">
+
+    <h2>🧠 F. Refleksi Pembelajaran</h2>
+
+    <h3>Berkesadaran</h3>
+
+    <p class="answer">
+        Hari ini saya menyadari bahwa JavaScript dapat
+        digunakan untuk mengolah data menggunakan variable,
+        input, output, dan operator aritmatika.
+    </p>
+
+    <h3>Bermakna</h3>
+
+    <p class="answer">
+        Materi ini dapat digunakan untuk membuat program
+        sederhana seperti kalkulator dan mesin kasir.
+    </p>
+
+    <h3>Menggembirakan</h3>
+
+    <p class="answer">
+        Bagian pembelajaran yang paling saya sukai adalah
+        membuat program kasir karena hasilnya dapat langsung
+        dihitung.
+    </p>
+
+</section>
+
+
+<!-- EXIT TICKET -->
+
+<section class="card">
+
+    <h2>🎟️ G. Exit Ticket</h2>
+
+    <p>
+        <b>1. Satu hal yang sudah saya kuasai:</b>
+    </p>
+
+    <p class="answer">
+        Saya sudah menguasai penggunaan variable dan
+        operator aritmatika.
+    </p>
+
+
+    <p>
+        <b>2. Satu hal yang masih membingungkan:</b>
+    </p>
+
+    <p class="answer">
+        Saya masih perlu memahami lebih banyak jenis operator
+        dalam JavaScript.
+    </p>
+
+
+    <p>
+        <b>3. Satu hal yang ingin saya coba:</b>
+    </p>
+
+    <p class="answer">
+        Saya ingin mencoba membuat program JavaScript
+        yang lebih interaktif.
+    </p>
+
+</section>
+
+
+<!-- URUTAN MATERI -->
+
+<section class="card">
+
+    <h2>🏁 H. Urutan Materi Selanjutnya</h2>
+
+    <p>
+        Pengenalan JavaScript
+        ↓
+        Variable
+        ↓
+        Input – Output – Aritmatika
+        ↓
+        Number & String + Konversi Data
+        ↓
+        Operator Perbandingan
+        ↓
+        Boolean
+        ↓
+        Percabangan if
+        ↓
+        if – else
+        ↓
+        else if
+        ↓
+        Nested if
+        ↓
+        Perulangan
+        ↓
+        Array
+        ↓
+        Function
+        ↓
+        Object
+        ↓
+        DOM
+        ↓
+        Event
+        ↓
+        Mini Project
+    </p>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    🏁 <b>F1 JAVASCRIPT LKPD</b> 🏁
+
+    <br><br>
+
+    Dasar-Dasar PPLG
+
+</footer>
+
+
+<script>
+
+function hitungUmur() {
+
+    let tahunLahir =
+        Number(document.getElementById("tahunLahir").value);
+
+    let tahunSekarang = 2026;
+
+    let umur = tahunSekarang - tahunLahir;
+
+    document.getElementById("hasilUmur").innerHTML =
+        "Umur kamu = <b>" + umur + " tahun</b>";
+}
+
+
+function hitungKasir() {
+
+    let makanan =
+        document.getElementById("makanan").value;
+
+    let harga =
+        Number(document.getElementById("harga").value);
+
+    let jumlah =
+        Number(document.getElementById("jumlah").value);
+
+    let total = harga * jumlah;
+
+    let diskon = total * 10 / 100;
+
+    let bayar = total - diskon;
+
+    document.getElementById("hasilKasir").innerHTML =
+
+        "<b>" + makanan + "</b><br>" +
+
+        "Harga: Rp" + harga.toLocaleString("id-ID") + "<br>" +
+
+        "Jumlah: " + jumlah + "<br>" +
+
+        "Total:
